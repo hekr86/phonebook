@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  spring:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    build:
+      context: .
+      dockerfile: mariadb.dockerfile
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: adminroot
+      MARIADB_PASSWORD: password
+      MARIADB_USER: demo
+    ports:
+      - "3306:3306"

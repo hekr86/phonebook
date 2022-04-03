@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb:replication:://db:3306/demo
+    username: hekr
+    password: password1234
+    tomcat:
+      max-active: 10
+  jpa:
+    hibernate:
+      ddl-auto: validate
+server:
+  port: 8080
+  servlet:
+    context-path: /phonebook
+  tomcat:
+    max-connections: 200
