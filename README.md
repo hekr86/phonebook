@@ -33,3 +33,20 @@ Add a new contact to the database, will auto generate a unique id.
 
 ### GET /contacts/{id}
 Fetch a contact by id, will return 204 no content if no match is found.
+
+### POST /contacts/{id}/phonenumber
+````
+curl --location --request POST 'localhost:8080/phonebook/contacts/1/phonenumber' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "number":"0716492886",
+    "typeOfNumber": "work"
+}'
+````
+Add a phone number to contact with {id} 
+
+### GET /phonenumber/{number}
+Do a search for phone number beginning with or equals the {number} input.
+
+### DELETE /phonenumber/{nubmer}
+Delete number matching {number} input, or return BAD REQUEST if number does not exist.
