@@ -1,9 +1,12 @@
 # phonebook
-
+A small demo project showing a simple phone book, where you can manage contacts and phone numbers.
+Running docker compose it will use the `target/*.jar` to create a standalone docker with a MariaDB as datasource.
+The MariaDB is pre-populated with 2 contacts and 3 phone number to be able to demonstrate the API functionality.
 ##Prerequisites
 To run this project you need Maven 3, Java 17, Docker and Docker compose setup.
 
 ##How to run the project
+Either use the start and stop shell scripts, or manually build and call docker compose.
 
 ````
 mvn clean package
