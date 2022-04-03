@@ -29,7 +29,7 @@ public class ContactsController {
         this.phoneNumbersService = phoneNumbersService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<ContactDetails>> getAllContacts() {
         var contacts = contactsService.findAll();
         var contactDetails = ContactFactory.createContactDetails(contacts);
@@ -46,7 +46,7 @@ public class ContactsController {
         }
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<Void> addContact(@RequestBody ContactDetails contactDetails) {
         var contactDetail = ContactFactory.createContact(contactDetails);
         contactsService.addContact(contactDetail);

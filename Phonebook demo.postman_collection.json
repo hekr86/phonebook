@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "268908e3-b630-474d-80d7-c3da3dde9bcb",
+		"name": "Phonebook demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/phonebook/contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phonebook",
+						"contacts"
+					]
+				},
+				"description": "Will return all existing contacts with related phone numbers."
+			},
+			"response": []
+		},
+		{
+			"name": "Add contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Jiwoo\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/phonebook/contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phonebook",
+						"contacts"
+					]
+				},
+				"description": "Add contact to the phone book."
+			},
+			"response": []
+		},
+		{
+			"name": "Add phone number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\":\"0716492886\",\r\n    \"typeOfNumber\": \"work\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/phonebook/contacts/1/phonenumber",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phonebook",
+						"contacts",
+						"1",
+						"phonenumber"
+					]
+				},
+				"description": "This API can add phone number to an existing contact, where we reference the contact by its unique conact_id as a path param"
+			},
+			"response": []
+		},
+		{
+			"name": "Search phone number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/phonebook/phonenumber/070",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phonebook",
+						"phonenumber",
+						"070"
+					]
+				},
+				"description": "Search for phone number that begins with or equals the number input as path param."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete phone number",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/phonebook/phonenumber/0702234500",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"phonebook",
+						"phonenumber",
+						"0702234500"
+					]
+				},
+				"description": "Delete the matching phone number."
+			},
+			"response": []
+		}
+	]
+}
